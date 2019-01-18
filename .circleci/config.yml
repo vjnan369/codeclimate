@@ -23,7 +23,7 @@ jobs:
           name: set jacoco.xml path for code climate
           command: |
             JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter \
-            format-coverage target/site/jacoco/jacoco.xml     \
+            format-coverage target/jacoco/jacoco.xml     \
             --input-type jacoco
 
       - run:
