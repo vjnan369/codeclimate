@@ -21,7 +21,9 @@ jobs:
             mvn test
       - run:
           name: set jacoco.xml path for code climate
-          command: ./cc-test-reporter format-coverage -d -t jacoco ./build/report/jacoco/test/jacocoTestReport.xml
+          command: JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter \
+            format-coverage target/site/jacoco/jacoco.xml     \
+            --input-type jacoco
 
       - run:
           name: upload code climate report
